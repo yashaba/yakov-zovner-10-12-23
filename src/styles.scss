@@ -18,10 +18,12 @@
 
 html {
   font-family: Montserrat;
+  height: 100%;
 }
 
 body {
   margin: 0;
+  height: 100%;
 }
 
 p {
@@ -37,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .h-full {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .flex {

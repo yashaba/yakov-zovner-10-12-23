@@ -1,11 +1,12 @@
 
 import axios from 'axios';
 import { IDailyForecasts, IMainWeather, ISearchResult } from '../interfaces/weather-data.interface';
+import { environment } from '../../environments/environment';
 
 
 export class WeatherAPIService {
 
-    private apiKey: string = 'eokdHD39sJEVmIcVIjDBQkoO9Nu42fx9';
+    private apiKey: string = environment.apiKey;
     private defaultUrl: string = 'https://dataservice.accuweather.com';
 
     async getlocationData(latitude:number, longitude:number) {

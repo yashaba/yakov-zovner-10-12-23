@@ -20,7 +20,7 @@
         </div>
     </div>
     <nav>
-        <a routerLink="/">Weather</a>
-        <a routerLink="/favorites">Favorites</a>
+        <a [routerLinkActiveOptions]="{exact: true}" [routerLinkActive]="(theme$ | async) === 'lightTheme' ? 'active-route active-route-light ' :'active-route active-route-dark' " routerLink="/">Weather</a>
+        <a [routerLinkActiveOptions]="{exact: true}" [routerLinkActive]="(theme$ | async) === 'lightTheme' ? 'active-route active-route-light' :'active-route active-route-dark' " routerLink="/favorites">Favorites</a>
     </nav>
 </header>
