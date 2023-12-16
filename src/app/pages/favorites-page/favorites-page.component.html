@@ -1,1 +1,6 @@
-<p>favorites-page works!</p>
+<!-- <perfect-scrollbar> -->
+    <section class="favorites-page">
+      <app-favorite-card *ngFor="let favoriteCity of (favorites$ | async); let favoriteIdx = index" [favoriteIdx]="favoriteIdx" [cityData]="favoriteCity"></app-favorite-card>
+    </section>
+  <!-- </perfect-scrollbar> -->
+  

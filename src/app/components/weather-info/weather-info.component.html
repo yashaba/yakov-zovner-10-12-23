@@ -1,1 +1,31 @@
-<p>weather-info works!</p>
+<section class="weather-info" [ngClass]="theme$ | async">
+    <div class="weather-info-left">
+        <div class="cityInfo-container">
+            <p>{{ weatherCard.locationData.LocalizedName }},
+                <span>{{ weatherCard.locationData.Country.LocalizedName }}</span>
+            </p>
+            <p class="date">{{ setDate }}</p>
+        </div>
+        <div class="imageWeather-container">
+            <img [src]="getWeatherIconSrc()" [alt]="weatherCard.mainWeather.WeatherText">
+            <p>{{ weatherCard.mainWeather.WeatherText }}</p>
+        </div>
+    </div>
+    <div class="weather-info-right">
+        <div class="addF-container">
+            <img *ngIf="favoriteIdx() > -1; else notFav" (click)="toggleFav()" src="../assets/icons/heart.png" alt="heart">
+            <ng-template #notFav>
+                <img (click)="toggleFav()" src="../assets/icons/empty-heart.png" alt="empty-heart">
+            </ng-template>
+        </div>
+        <div class="temp-container">
+            <!-- <p *ngIf="tempType === 'c'">{{ weatherCard.mainWeather.Temperature.Metric.Value }} °C </p> -->
+            <p > {{weatherCard.mainWeather.Temperature.Imperial.Value | ConvertToCelcius: (tempType$ | async)}} °{{ tempType$ | async | uppercase }} </p>
+            <!-- <ng-template #notFav>
+                <p>{{ weatherCard.mainWeather.Temperature.Imperial.Value }} °F</p>
+            </ng-template> -->
+        </div>
+
+        <app-search-input [theme$]="theme$" class="search-input"></app-search-input>
+    </div>
+</section>

@@ -1,0 +1,18 @@
+@import "../../../assets/styles/setup/mixins";
+@import "../../../assets/styles/setup/_variables.scss";
+
+.ps {
+  height: 90vh;
+}
+
+@include for-Hnormal-layout {
+  .ps {
+    height: 93.6vh;
+  }
+}
+
+.favorites-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

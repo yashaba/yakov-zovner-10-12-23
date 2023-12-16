@@ -1,0 +1,10 @@
+<section class="daily-forecaste">
+    <h2>{{ day }}</h2>
+    <div >
+        <span>{{ weather.Temperature.Maximum.Value | ConvertToCelcius: tempType}}° | {{ weather.Temperature.Minimum.Value | ConvertToCelcius:tempType}}°</span>
+    </div>
+    
+    <div>
+        <img  [src]="theme === 'lightTheme' ? getIconPath(weather.Day.Icon) : getIconPath(weather.Night.Icon)" alt="">
+    </div>
+</section>

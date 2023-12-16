@@ -1,0 +1,11 @@
+
+<section class="color-picker2">
+
+        <div *ngFor="let option of [].constructor(25); let num = index" class="sky-gradient" 
+        (mouseover)="hoverColor(num)" 
+        (click)="closePicker()" 
+        [ngClass]="optionNum(num)">
+        {{ formatTime(num) }}:00
+        </div>
+  </section>
+  

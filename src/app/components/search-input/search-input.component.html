@@ -1,1 +1,11 @@
-<p>search-input works!</p>
+<section class="search-input" [ngClass]="theme$ | async">
+    <span class="inputPH" [ngClass]="{'isWriting': isWriting}" (click)="setInput()">Search city</span>
+    <i class="el-icon-search" [ngClass]="{'isWriting': isWriting}"></i>
+    <input type="text" #searchCity [(ngModel)]="city" (input)="setIsWriting($event)" />
+
+    <div *ngIf="cityListRender && cityListRender.length > 0" class="dataList" [ngClass]="theme$ | async">
+        <div class="option" *ngFor="let city1 of cityListRender" (click)="makeCard(city1)" >
+            <h3>{{ city1.LocalizedName }}, <span class="country">{{ city1.Country.LocalizedName }}</span></h3>
+        </div>
+    </div>
+</section>

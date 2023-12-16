@@ -1,0 +1,193 @@
+@import "../../../assets/styles/setup/mixins";
+@import "../../../assets/styles/setup/variables";
+
+header {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px -8px;
+    height: 60px;
+    // line-height: 60px;
+
+    &.lightTheme {
+        color: black;
+        background-color: rgb(173 173 173 / 50%);
+
+        .navBar-icon {
+            &:hover {
+                background-color: rgba(224, 224, 224, 0.6);
+            }
+        }
+      
+        span {
+            color: black;
+
+
+            &.clickedTemp {
+                color: rgb(0, 0, 0);
+            }
+
+        }
+
+        a {
+            color: black;
+
+            &:hover {
+                background-color: rgba(224, 224, 224, 0.6);
+                color: rgb(255, 255, 255);
+            }
+        }
+
+        nav a.router-link-exact-active {
+            background-color: rgba(224, 224, 224, 0.6);
+            color: rgb(0, 0, 0);
+            display: none;
+
+            @include for-narrow-layout {
+                display: inline;
+            }
+        }
+    }
+
+    &.darkTheme {
+        color: white;
+        background-color: rgba(28 31 32 / 70%);
+
+        .navBar-icon {
+            &:hover {
+                background-color: rgba(37, 37, 37, 0.7);
+            }
+        }
+
+        .temp-controller {
+            div {
+                span {
+                    color: white;
+
+    
+                    &.clickedTemp {
+                        color: rgb(255, 255, 255);
+                    }
+    
+                }
+
+            }
+        }
+
+        a {
+            color: rgb(255, 255, 255);
+
+            &:hover {
+                background-color: rgba(112, 112, 112, 0.7);
+            }
+        }
+
+        nav a.router-link-exact-active {
+            background-color: rgba(37, 37, 37, 0.7);
+            color: rgb(255, 255, 255);
+            display: none;
+
+            @include for-narrow-layout {
+                display: inline;
+            }
+        }
+    }
+
+    .navBar-icon {
+        width: 60px;
+        min-height: 60px;
+        padding: 13px;
+        cursor: pointer;
+        transition: border-color .3s, background-color .3s, color .3s;
+
+
+    }
+
+    .temp-controller {
+        padding: 6px 9px 6px 6px;
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+
+        span {
+            padding: 5px 9px 5px 5px;
+        }
+    }
+
+    nav {
+        padding: 30px;
+        align-self: center;
+
+        a {
+            text-decoration: none;
+            transition: border-color .3s, background-color .3s, color .3s;
+            font-size: 14px;
+            line-height: 60px;
+            padding: 22px;
+
+        }
+    }
+
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+      
+      /* Hide default HTML checkbox */
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      
+      /* The slider */
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      input:checked + .slider {
+        background-color: #2196F3;
+      }
+      
+      input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+      }
+      
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+      
+      /* Rounded sliders */
+      .slider.round {
+        border-radius: 34px;
+      }
+      
+      .slider.round:before {
+        border-radius: 50%;
+      }
+
+}

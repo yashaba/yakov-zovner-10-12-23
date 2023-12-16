@@ -1,1 +1,9 @@
-<p>currday-details works!</p>
+<section class="currday-details">
+    <div>{{ cityData.mainWeather.WeatherText }}</div>
+    <div>{{ cityData.locationData.LocalizedName }}</div>
+    <div>
+      <p>{{ cityData.mainWeather.Temperature.Imperial.Value | ConvertToCelcius: (tempType$ | async)  }} °{{tempType$ | async | uppercase}}</p>
+    </div>
+    <div></div>
+  </section>
+  

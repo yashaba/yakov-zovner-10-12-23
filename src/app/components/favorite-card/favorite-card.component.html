@@ -1,1 +1,8 @@
-<p>favorite-card works!</p>
+<section class="favorites-card">
+    <div (click)="setCard()" class="favorite-card" [ngClass]="[setRandomImageClass(), theme$ | async]">
+      <button (click)="removeFromFavorites($event)">X</button>
+      <app-currday-details [cityData]="cityData"></app-currday-details>
+      <app-future-details [theme$]="theme$" [cityData]="cityData"></app-future-details>
+    </div>
+  </section>
+  

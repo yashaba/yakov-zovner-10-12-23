@@ -1,0 +1,84 @@
+@import "../../../assets/styles/setup/mixins";
+@import "../../../assets/styles/setup/_variables.scss";
+
+.ps {
+  height: 90vh;
+}
+
+@include for-Hnormal-layout {
+  .ps {
+    height: 93.6vh;
+  }
+}
+
+.favorite-card {
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    min-width: 300px;
+    height: 400px;
+    color: white;
+    margin: 30px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+    text-align: center;
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    border-radius: 8px;
+    width: 88vw;
+  
+    @include for-narrow-layout {
+      width: 30vw;
+    }
+  
+    @include for-normal-layout {
+      width: 30vw;
+    }
+  
+    @include for-wide-layout {
+      width: 45vw;
+    }
+    
+  
+    &.darkTheme {
+          background-color: rgba(37, 37, 37, 0.8);
+    }
+    &.img-1 {
+      background-image: url('../../../assets/favorites-bg/1.jpg');
+    }
+  
+    &.img-2 {
+      background-image: url('../../../assets/favorites-bg/2.jpg');
+    }
+  
+    &.img-3 {
+      background-image: url('../../../assets/favorites-bg/3.jpg');
+    }
+  
+    &.img-0 {
+      background-image: url('../../../assets/favorites-bg/0.jpg');
+    }
+  
+  
+    button {
+      background-color: transparent;
+      color: grey;
+      border: none;
+      width: 40px;
+      font-size: 1.3rem;
+      position: absolute;
+      right: 2px;
+      top: 9px;
+      cursor: pointer;
+  
+      &:hover {
+        color: rgb(255, 255, 255);
+      }
+    }
+  
+  
+  }

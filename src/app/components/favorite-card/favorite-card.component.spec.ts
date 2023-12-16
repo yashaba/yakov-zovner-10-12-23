@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FavoriteCardComponent } from './favorite-card.component';
+import { FavoritesCardComponent } from './favorite-card.component';
 
 describe('FavoriteCardComponent', () => {
-  let component: FavoriteCardComponent;
-  let fixture: ComponentFixture<FavoriteCardComponent>;
+  let component: FavoritesCardComponent;
+  let fixture: ComponentFixture<FavoritesCardComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FavoriteCardComponent]
+      declarations: [FavoritesCardComponent]
     });
-    fixture = TestBed.createComponent(FavoriteCardComponent);
+    fixture = TestBed.createComponent(FavoritesCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

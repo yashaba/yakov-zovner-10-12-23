@@ -1,1 +1,15 @@
-<p>weather-page works!</p>
+<!-- <perfect-scrollbar> -->
+    <div>
+        <section class="weather-page" *ngIf="weatherCard$ | async as weatherCard">
+            <div class="weather-container" [ngClass]="theme$ | async">
+              <app-weather-info [favorites]="favorites" [theme$]="theme$" [tempType$]="tempType$" [weatherCard]="weatherCard" class="weather-info"></app-weather-info>
+              <div class="futureWeather-container" [ngClass]="theme$ | async">
+                <app-daily-forecast [theme]="theme" class="dailyForecast" *ngFor="let forecast of weatherCard.dailyForecasts; index as num" [weather]="forecast" [tempType]="tempType$ | async "></app-daily-forecast>
+              </div>
+            </div>
+          </section>
+
+    </div>
+      
+  <!-- </perfect-scrollbar> -->
+  

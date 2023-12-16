@@ -1,1 +1,17 @@
-<p>future-details works!</p>
+<section class="future-details" [ngClass]="theme$ | async">
+    <div class="flex space-between" *ngFor="let num of [1, 2]">
+      <div>{{ skipDay(num) }}</div>
+      <div class="flex">
+        <img [src]="getIconPath(cityData.dailyForecasts[num - 1].Day.Icon)">
+        <!-- <div class="temp-box" *ngIf="tempType === 'c'">
+          <span>{{ convertToC(cityData.dailyForecasts[num - 1].Temperature.Minimum.Value) }}° |
+            {{ convertToC(cityData.dailyForecasts[num - 1].Temperature.Maximum.Value) }}°</span>
+        </div> -->
+        <div class="temp-box">
+          <span>{{ cityData.dailyForecasts[num - 1].Temperature.Minimum.Value | ConvertToCelcius: (tempType$ | async) }}° |
+            {{ cityData.dailyForecasts[num - 1].Temperature.Maximum.Value | ConvertToCelcius: (tempType$ | async) }}°</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
